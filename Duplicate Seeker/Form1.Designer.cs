@@ -93,14 +93,16 @@
             this.picDupe1.Location = new System.Drawing.Point(330, 21);
             this.picDupe1.Name = "picDupe1";
             this.picDupe1.Size = new System.Drawing.Size(451, 185);
+            this.picDupe1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picDupe1.TabIndex = 5;
             this.picDupe1.TabStop = false;
             // 
             // picDupe2
             // 
-            this.picDupe2.Location = new System.Drawing.Point(330, 253);
+            this.picDupe2.Location = new System.Drawing.Point(330, 254);
             this.picDupe2.Name = "picDupe2";
             this.picDupe2.Size = new System.Drawing.Size(451, 185);
+            this.picDupe2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picDupe2.TabIndex = 6;
             this.picDupe2.TabStop = false;
             // 
@@ -112,6 +114,7 @@
             this.btnIgnore.TabIndex = 7;
             this.btnIgnore.Text = "Ignore";
             this.btnIgnore.UseVisualStyleBackColor = true;
+            this.btnIgnore.Click += new System.EventHandler(this.btnIgnore_Click);
             // 
             // btnDeleteTop
             // 
@@ -121,6 +124,7 @@
             this.btnDeleteTop.TabIndex = 8;
             this.btnDeleteTop.Text = "Delete Top";
             this.btnDeleteTop.UseVisualStyleBackColor = true;
+            this.btnDeleteTop.Click += new System.EventHandler(this.btnDeleteTop_Click);
             // 
             // btnDeleteBottom
             // 
@@ -130,6 +134,7 @@
             this.btnDeleteBottom.TabIndex = 9;
             this.btnDeleteBottom.Text = "Delete Bottom";
             this.btnDeleteBottom.UseVisualStyleBackColor = true;
+            this.btnDeleteBottom.Click += new System.EventHandler(this.btnDeleteBottom_Click);
             // 
             // frmMain
             // 
