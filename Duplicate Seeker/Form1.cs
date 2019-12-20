@@ -18,5 +18,17 @@ namespace Duplicate_Seeker
         {
             InitializeComponent();
         }
+
+        #region Button Events
+        private void btnScan_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        #endregion
     }
 }
