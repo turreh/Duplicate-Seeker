@@ -107,18 +107,21 @@ namespace Duplicate_Seeker
             picDupe2.Image = null;
         }
 
-
-        private void BeginScanning()
+        /// <summary>
+        /// Scan though all images within the provided folder and any subfolders. Recursive statement.
+        /// </summary>
+        private void BeginScanning(string strPath)
         {
             // Ensure a filepath is entered:
-            if (txtPath.Text == string.Empty)
+            if (strPath == string.Empty)
             {
                 MessageBox.Show("A folder path has not been provided. Please enter a directory and try again.", "Invalid Input Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
-            DirectoryInfo folder = new DirectoryInfo(txtPath.Text);
+            // Since strPath isn't empty, test to see if the provided path works.
+            DirectoryInfo folder = new DirectoryInfo(strPath);
             if(!folder.Exists)
             {
                 MessageBox.Show("The provided folder path wasn't found or may have been entered incorrectly. Please check your input " +
@@ -126,7 +129,7 @@ namespace Duplicate_Seeker
                 return;
             }
 
-
+            // 
         }
 
         
