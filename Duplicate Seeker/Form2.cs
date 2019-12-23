@@ -21,5 +21,10 @@ namespace Duplicate_Seeker
             InitializeComponent();
             progressBar1.Maximum = NumFolders;
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

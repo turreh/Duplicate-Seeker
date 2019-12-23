@@ -112,6 +112,7 @@ namespace Duplicate_Seeker
         /// </summary>
         private void BeginScanning(string strPath)
         {
+            #region Verify Input
             // Ensure a filepath is entered:
             if (strPath == string.Empty)
             {
@@ -128,8 +129,17 @@ namespace Duplicate_Seeker
                     "and try again.", "Folder Not Found");
                 return;
             }
+            #endregion
 
-            // 
+            // Now that we've verified correct input, open up a loading form.
+            // Needed: the number of subfolders in the original directory provided in txtPath.
+            // Since BeginScanning is recursive, only execute this section of code when strPath is equal to txtPath.Text
+            if(strPath == txtPath.Text)
+            {
+                // Enumerate the subfolders and gather a maximum value to apply to frmScanning's progressbar.
+                int max = folder.EnumerateDirectories().Count();
+                frmScanning scanningForm = new frmScanning(max);
+            }
         }
 
         
