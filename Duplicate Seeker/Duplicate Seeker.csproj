@@ -52,19 +52,19 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmLoading.cs">
+    <Compile Include="frmScanning.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLoading.Designer.cs">
-      <DependentUpon>frmLoading.cs</DependentUpon>
+    <Compile Include="frmScanning.Designer.cs">
+      <DependentUpon>frmScanning.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmLoading.resx">
-      <DependentUpon>frmLoading.cs</DependentUpon>
+    <EmbeddedResource Include="frmScanning.resx">
+      <DependentUpon>frmScanning.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

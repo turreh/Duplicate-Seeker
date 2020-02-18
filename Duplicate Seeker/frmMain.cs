@@ -13,8 +13,10 @@ namespace Duplicate_Seeker
 {
     public partial class frmMain : Form
     {
-        Size ExpandedSize = new Size(820, 490);
-        Size CompactSize = new Size(320, 160);
+        // Initial variables
+        frmScanning scanForm = null;            // Loading/scanning screen
+        int progress = 0;                       // Tracks the progress measures through
+        int DirNameLength = -1;                 // Lowers character count when writing duplicate file paths
         public frmMain()
         {
             InitializeComponent();
@@ -105,9 +107,20 @@ namespace Duplicate_Seeker
             if(strPath == txtPath.Text)
             {
                 // Enumerate the subfolders and gather a maximum value to apply to frmScanning's progressbar.
-                int max = folder.EnumerateDirectories().Count();
-                frmScanning scanningForm = new frmScanning(max);
+                int max = folder.EnumerateDirectories().Count() + 1;
+                scanForm = new frmScanning(max);
+
+                // First check for duplicates within the original filepath.
+                if (radNameScan.Checked)
+                {
+                    foreach (FileInfo file in folder.EnumerateFiles())
+                    {
+                        //IEnumerable<FileInfo> duplicates = folder.EnumerateFiles().Where(f => f.Name == file.Name);
+                        //if(duplicates.)
+                    }
+                }
             }
+
         }
 
 
