@@ -132,6 +132,7 @@
             this.btnScan.TabIndex = 12;
             this.btnScan.Text = "&Scan for Duplicate Pictures";
             this.btnScan.UseVisualStyleBackColor = true;
+            this.btnScan.Click += new System.EventHandler(this.btnScan_Click);
             // 
             // lstDupeOccurences
             // 

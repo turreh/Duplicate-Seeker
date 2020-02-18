@@ -28,7 +28,7 @@ namespace Duplicate_Seeker
         /// </summary>
         private void btnScan_Click(object sender, EventArgs e)
         {
-
+            BeginScanning(txtPath.Text);
         }
 
         /// <summary>
@@ -113,17 +113,48 @@ namespace Duplicate_Seeker
                 // First check for duplicates within the original filepath.
                 if (radNameScan.Checked)
                 {
-                    foreach (FileInfo file in folder.EnumerateFiles())
+                    try
                     {
-                        //IEnumerable<FileInfo> duplicates = folder.EnumerateFiles().Where(f => f.Name == file.Name);
-                        //if(duplicates.)
+                        scanFolder(folder);
+                        //progress += 1;        //increment progress bar
                     }
+                    catch(Exception e)
+                    {
+                        MessageBox.Show("An error occurred in BeginScanning() (initial folder scan): " + e.Message);
+                        return;
+                    }
+                }
+                else
+                {
+                    // Image search; to be implemented
                 }
             }
 
         }
+        private void scanFolder(DirectoryInfo folder)
+        {
+            IEnumerable<FileInfo> files = folder.EnumerateFiles();
+            IEnumerable<IGrouping<string, string>> DuplicateNames =
+                from file in files
+                group file.FullName.Substring(DirNameLength) by file.Name into filegroup
+                where filegroup.Count() > 1
+                select filegroup; //error with the query
+            progress += 1;
+            AddOccurrences(DuplicateNames);
+        }
 
+        private void AddOccurrences(IEnumerable<IGrouping<string,string>> names)
+        {
+            displayIGrouping(names);
+        }
 
+        private void displayIGrouping(IEnumerable<IGrouping<string, string>> names)
+        {
+            foreach(IGrouping<string, string> group in names)
+            {
+                Console.WriteLine(group.ElementAtOrDefault(0) + "    " + group.ElementAtOrDefault(1));
+            }
+        }
         #endregion
     }
 }
