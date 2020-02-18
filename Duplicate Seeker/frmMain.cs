@@ -65,37 +65,6 @@ namespace Duplicate_Seeker
         #endregion
 
         #region Custom Functions
-        /// <summary>
-        /// Changes the form size to ExpandedSize and makes the outer controls visible.
-        /// </summary>
-        private void ToExpanded()
-        {
-            this.Size = ExpandedSize;
-            ToggleControls(MakeVisible: true);
-        }
-
-        /// <summary>
-        /// Changes the form size to CompactSize and hides the outer controls.
-        /// </summary>
-        private void ToCompact()
-        {
-            this.Size = CompactSize;
-            ToggleControls(MakeVisible: false);
-        }
-
-        /// <summary>
-        /// Hides or unhides the following controls.
-        /// </summary>
-        /// <param name="MakeVisible">Boolean to tell whether the </param>
-        private void ToggleControls(bool MakeVisible)
-        {
-            lstDupeOccurences.Visible = MakeVisible;
-            picDupe1.Visible = MakeVisible;
-            picDupe2.Visible = MakeVisible;
-            btnIgnore.Visible = MakeVisible;
-            btnDeleteTop.Visible = MakeVisible;
-            btnDeleteBottom.Visible = MakeVisible;
-        }
 
         /// <summary>
         /// Clear the instances of duplicates recorded on the form, returning to a blank slate.
@@ -103,8 +72,7 @@ namespace Duplicate_Seeker
         private void ClearInstances()
         {
             lstDupeOccurences.Items.Clear();
-            picDupe1.Image = null;
-            picDupe2.Image = null;
+            picImg.Image = null;
         }
 
         /// <summary>
@@ -142,7 +110,7 @@ namespace Duplicate_Seeker
             }
         }
 
-        
+
         #endregion
     }
 }
